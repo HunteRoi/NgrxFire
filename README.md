@@ -1,27 +1,61 @@
 # NgrxFire
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+NgrxFire is a redux demo app created with Angular Ngrx and Firebase. It demonstrates how to authenticate using Firebase Google OAuth.
 
-## Development server
+## Build your Angular ngrx on a Solid Foundation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Learn Angular ngrx Redux basics by building this app step-by-step. 
 
-## Code scaffolding
+- [Video Lessons and Screencasts](https://angularfirebase.com)
+- [Join the Slack Team](https://join.slack.com/angularfirebase/shared_invite/MjA2NTgxMTI0MTk2LTE0OTg4NTQ4MDAtMjhhZDIzMjc0Mg)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![](./src/assets/example.gif)
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Clone repository and prepare to build:
 
-## Running unit tests
+Use the following terminal commands to prepare to build your application:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- `git clone https://github.com/hunteroi/NgrxFire.git`
+- `cd NgrxFire`
+- `npm install`
 
-## Running end-to-end tests
+#### Create a Firebase account
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+*  Create a Firebase account at https://firebase.google.com/. 
+*  Configure Authentication for the web app:
+  >  ![firebaseauth](https://user-images.githubusercontent.com/210413/30171158-b036b8dc-93b6-11e7-9698-b355544d0c00.png)
+*  Create your FireStore database and connect it with your project
+  > 1. `firebase login`
+  > 2. `firebase init`
+  > 3. Follow the steps and choose "Existing project
+*  Gather your Firebase configuration information:
+  >  ![firebaseconfig](https://user-images.githubusercontent.com/210413/30178188-b219c6b4-93cd-11e7-854d-788a2c2d99b1.jpg)
+*  Create the environment file below `/src/environments/environment.ts`.
+```typescript
+export const environment = {
+  production: false,
+  firebaseConfig: {
+    apiKey: "API_KEY",
+    authDomain: "AUTH_DOMAIN",
+    projectId: "PROJECT_ID",
+    storageBucket: "STORAGE_BUCKET",
+    messagingSenderId: "MESSAGING_SENDER_ID",
+    appId: "APP_ID"
+  }
+};
+```
+*  And finally `ng serve`
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Additional Details
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0. It uses @angular/fire@6.1.5, firebase@8.6.3.
+
+It has been set up on the 29th of May 2021.
+
+Available under the MIT License.
+
+
+!!! This project is an updated version of [ngrx-fire](https://github.com/codediodeio/ngrx-fire) !!!
